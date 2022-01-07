@@ -12,12 +12,13 @@ contract Token {
 
     //Events
     event Transfer(address indexed _from, address indexed _to, uint256 _value);
-event Approval(address indexed _owner, address indexed _spender, uint256 _value);
+    event Approval(address indexed _owner, address indexed _spender, uint256 _value);
 
     //Track balances
     mapping(address => uint256) public balanceOf;
     
     //Track allowances
+    // user-address => exchange-address, amount
     mapping(address => mapping(address => uint256)) public allowance;
 
     //Send tokens

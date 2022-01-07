@@ -81,7 +81,6 @@ contract('Token', ([deployer, receiver, exchange]) => {
             let invalidAmount
             invalidAmount = tokens(10000000)
             await token.transfer(receiver, invalidAmount, {from: deployer}).should.be.rejectedWith(EVM_REVERT)
-    
         })
 
 
@@ -89,7 +88,6 @@ contract('Token', ([deployer, receiver, exchange]) => {
             let invalidAmount
             invalidAmount = tokens(10)
             await token.transfer(deployer, invalidAmount, {from: receiver}).should.be.rejectedWith(EVM_REVERT)
-    
         })
 
         it('rejects invalid receipents', async () => {
@@ -140,7 +138,7 @@ contract('Token', ([deployer, receiver, exchange]) => {
             amount = tokens(100)
             result = await token.approve(exchange, amount, {from: deployer})
         })
-        
+
         describe('success', () => {
             beforeEach(async ()=> {
                 amount = tokens(100)
